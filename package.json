@@ -1,5 +1,9 @@
 {
     "dependencies": {
+        "telegraf": "^3.26.0",
         "yarn": "^1.13.0"
+    },
+    "scripts": {
+        "start": "node index"
     }
 }

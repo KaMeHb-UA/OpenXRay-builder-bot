@@ -21,7 +21,9 @@ module.exports = new Proxy({}, {
         return new Proxy({}, {
             get(_, name){
                 return (...args) => {
-                    var cp = spawn(appName, [name, ...args], { stdio: 'ignore' }),
+                    var opts = {};
+                    if(typeof args[0] == 'object') opts = args.shift();
+                    var cp = spawn(appName, [name, ...args], Object.assign(opts, { stdio: 'ignore' })),
                         stdout = '',
                         stderr = '';
 

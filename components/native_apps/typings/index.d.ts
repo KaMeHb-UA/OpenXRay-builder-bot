@@ -6,8 +6,8 @@ declare class AsyncChildProcess extends Promise<string>{
     stdio: [stream.Writable, stream.Readable, stream.Readable]
 }
 
-interface Main{
+declare var _: {
     [x: string]: (...args: string[]) => AsyncChildProcess
 }
 
-export = Main
+export = _

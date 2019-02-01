@@ -6,13 +6,12 @@ declare class AsyncChildProcess extends Promise<string>{
     stdin: stream.Writable
     stdio: [stream.Writable, stream.Readable, stream.Readable]
 }
-declare namespace AsyncChildProcess{
-    type Constructor = (...args: string[]) => AsyncChildProcess
-    type ConstructorWithOptions = (opts: child.SpawnOptions, ...args: string[]) => AsyncChildProcess
-}
+
+declare function main(...args: string[]): AsyncChildProcess
+declare function main(opts: child.SpawnOptions, ...args: string[]): AsyncChildProcess
 
 declare var _: {
-    [x: string]: AsyncChildProcess.Constructor | AsyncChildProcess.ConstructorWithOptions
+    [x: string]: typeof main
 }
 
 export = _

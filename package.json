@@ -4,6 +4,6 @@
         "yarn": "^1.13.0"
     },
     "scripts": {
-        "start": "node index"
+        "start": "node --experimental-modules --inspect index"
     }
 }

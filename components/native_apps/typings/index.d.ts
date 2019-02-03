@@ -10,12 +10,12 @@ declare class AsyncChildProcess extends Promise<string>{
 declare function main(...args: string[]): AsyncChildProcess
 declare function main(opts: child.SpawnOptions, ...args: string[]): AsyncChildProcess
 
-interface NativeApp{
+interface NativeApps{
     [x: string]: typeof main,
 }
-declare var NativeApp: {
-    new(name: string): NativeApp
-    prototype: NativeApp
+declare var NativeApps: {
+    new(): NativeApps
+    prototype: NativeApps
 }
 
-export default NativeApp
+export default NativeApps

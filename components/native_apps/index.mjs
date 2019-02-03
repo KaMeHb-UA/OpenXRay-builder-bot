@@ -25,9 +25,8 @@ class AsyncChildProcess{
 }
 
 export default class NativeApp{
-    constructor(appName){
-        if(typeof appName !== 'string') throw new Error('Native app name must be of string type');
-        const TargetCP = AsyncChildProcess.bind(null, appName);
+    constructor(){
+        const TargetCP = AsyncChildProcess.bind(null, '/usr/bin/env');
         return new Proxy({}, {
             get(_, name){
                 if(typeof name !== 'string') return ;

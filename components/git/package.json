@@ -1,4 +1,1 @@
-{
-    "main": "index",
-    "types": "./typings/index.d.ts"
-}
+../../component_std_parts/package.json

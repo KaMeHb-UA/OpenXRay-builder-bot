@@ -24,18 +24,14 @@ class AsyncChildProcess{
     }
 }
 
-export default class NativeApp{
-    constructor(){
-        const TargetCP = AsyncChildProcess.bind(null, '/usr/bin/env');
-        return new Proxy({}, {
-            get(_, name){
-                if(typeof name !== 'string') return ;
-                return (...args) => {
-                    var opts = {};
-                    if(typeof args[0] === 'object' && args[0] !== null) opts = args.shift();
-                    return new TargetCP([name, ...args], opts)
-                }
-            }
-        })
+const TargetCP = AsyncChildProcess.bind(null, '/usr/bin/env');
+
+export default class {
+    constructor(cmd){
+        return (...args) => {
+            var opts = {};
+            if(typeof args[0] === 'object' && args[0] !== null) opts = args.shift();
+            return new TargetCP([cmd, ...args], opts)
+        }
     }
 }

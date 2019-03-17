@@ -3,7 +3,10 @@
         "telegraf": "^3.26.0",
         "yarn": "^1.13.0"
     },
+    "devDependencies": {
+        "@types/node": "^11.10.4"
+    },
     "scripts": {
-        "start": "node --experimental-modules --inspect index"
+        "start": "node --experimental-modules --harmony --inspect index"
     }
 }

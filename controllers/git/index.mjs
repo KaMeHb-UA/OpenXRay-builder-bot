@@ -1,7 +1,7 @@
-import NativeApps from 'components/native_apps'
+import NativeApp from 'components/native_apps'
 import fs from 'fs'
 
-const { git } = new NativeApps;
+const git = new NativeApp('git');
 
 class Git{
     constructor(cwd){
